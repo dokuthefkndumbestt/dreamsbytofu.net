@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>🎬 DreamsByToFU (DBT) – Movie Browser</title>
+    <style>
+        body { font-family: sans-serif; background: #111; color: #fff; text-align: center; margin:0; padding:0; }
+        header { background:#222; padding:15px 0; }
+        h1 { margin:0; font-size:1.8em; color:#ff4b2b; }
+        p.subtitle { font-size:0.9em; color:#ccc; margin-top:5px; }
+        input { width:80%; padding:10px; margin-top:20px; border-radius:10px; border:none; }
+        button { background:#ff4b2b; color:#fff; border:none; padding:10px 18px; border-radius:10px; margin-left:10px; font-weight:bold; cursor:pointer; }
+        button:hover { background:#ff6b4b; }
+        iframe { width:90%; height:500px; margin-top:20px; border:none; border-radius:12px; }
+        footer { margin-top:30px; padding:10px; font-size:0.8em; color:#888; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🎬 DreamsByToFU (DBT)</h1>
+        <p class="subtitle">Your Personal Movie Browser 🍿</p>
+    </header>
+    <main>
+        <input id="url" placeholder="Enter Movie Website URL..." />
+        <button onclick="openSite()">Browse</button>
+        <iframe id="viewer" src=""></iframe>
+    </main>
+    <footer>
+        © 2025 DreamsByToFU (DBT)
+    </footer>
+    <script>
+        function openSite() {
+            let site = document.getElementById("url").value.trim();
+            if(!site) return alert("Please enter a website link!");
+            if(!site.startsWith("http")) site = "https://" + site;
+            document.getElementById("viewer").src = site;
+        }
+    </script>
+</body>
+</html>
